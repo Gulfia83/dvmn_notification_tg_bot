@@ -27,7 +27,7 @@ def main():
     dvmn_token = os.getenv('DVMN_API_TOKEN')
     tg_bot_token = os.getenv('TG_BOT_TOKEN')
     chat_id = os.getenv('CHAT_ID')
-    
+
     bot = telegram.Bot(tg_bot_token)
 
     logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s")
