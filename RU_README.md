@@ -21,6 +21,7 @@ python main.py
 ```
 #### Вывод в телеграм
 
+![Снимок](https://github.com/user-attachments/assets/8bede591-d918-415d-bbcf-2ba1eb7fb325)
 
 ### Цель проекта
 
