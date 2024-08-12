@@ -21,6 +21,7 @@ You can run the script using the `python main.py` command in the command line.
 python main.py
 ```
 #### Output to telegram
+![Снимок](https://github.com/user-attachments/assets/97f120f2-b914-49fe-8f55-b6abe721d54f)
 
 ### Project goal
 
