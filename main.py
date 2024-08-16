@@ -26,7 +26,7 @@ def main():
 
     dvmn_token = os.getenv('DVMN_API_TOKEN')
     tg_bot_token = os.getenv('TG_BOT_TOKEN')
-    chat_id = os.getenv('CHAT_ID')
+    tg_chat_id = os.getenv('TG_CHAT_ID')
 
     bot = telegram.Bot(tg_bot_token)
 
@@ -47,13 +47,13 @@ def main():
                                     params=params,
                                     timeout=60)
             response.raise_for_status
-            results = response.json()
-            if results['status']=='found':
-                params['timestamp'] = results['last_attempt_timestamp']
-                for result in results['new_attempts']:
-                    send_message(bot, chat_id, result)
-            elif results['status'] == 'timeout':
-                params['timestamp'] = results['timestamp_to_request']
+            verification_results = response.json()
+            if verification_results['status'] == 'found':
+                params['timestamp'] = verification_results['last_attempt_timestamp']
+                for result in verification_results['new_attempts']:
+                    send_message(bot, tg_chat_id, result)
+            elif verification_results['status'] == 'timeout':
+                params['timestamp'] = verification_results['timestamp_to_request']
 
         except requests.exceptions.ReadTimeout:
             pass

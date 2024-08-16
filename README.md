@@ -11,7 +11,7 @@ The Telegram bot notifies about verified assignments on the Devman course.
 4. Add the following variables to the `.env` file:
 - `DVMN_API_TOKEN` - your Devman API token.
 - `TG_BOT_TOKEN` - your bot token.
-- `CHAT_ID` - to get your chat_id, write to a special bot in Telegram: `@userinfobot`
+- `TG_CHAT_ID` - to get your chat_id, write to a special bot in Telegram: `@userinfobot`
 
 ### Example of running in the console and output to Telegram
 
