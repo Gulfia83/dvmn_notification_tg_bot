@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 import logging
 
 
+logger = logging.getLogger('check_results')
+
+
 class TelegramLogsHandler(logging.Handler):
 
     def __init__(self, tg_bot, chat_id):
@@ -39,7 +42,6 @@ def main():
 
     bot = telegram.Bot(tg_bot_token)
 
-    logger = logging.getLogger('check_results')
     logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s")
     logger.setLevel(logging.INFO)
     logger.addHandler(TelegramLogsHandler(bot, tg_chat_id))
@@ -73,6 +75,7 @@ def main():
             sleep(5)
         except Exception as err:
             logger.exception(err)
+            logging.exception(err)
 
 
 if __name__ == '__main__':
